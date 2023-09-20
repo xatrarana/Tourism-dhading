@@ -1,12 +1,13 @@
 import { View, Text, Image } from 'react-native'
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 
 const Logo = ({source,size}) => {
+  const [item, setItem] = useState({});
 
   const items = [
     {
         id: 'welcome',
-        image: require('../../assets/signInLogo.png'),
+        image: require('../../assets/welcomeLogo.png'),
     },
     {
         id: 'signin',
@@ -17,9 +18,12 @@ const Logo = ({source,size}) => {
 ];
 
 
-const item = items.find((item)=> item.id === source );
+useEffect(()=>{
+  setItem(items.find((item)=> item.id === source ));
 
-console.log(item)
+}, [source])
+
+console.log(item);
 
 
   return (

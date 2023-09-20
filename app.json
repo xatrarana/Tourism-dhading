@@ -12,24 +12,35 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.castelltech.hetaudatourismapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.castelltech.hetauda_tourism_app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyA8XtRBSfxuEQjxP7Nrj4TLK3Pc1C3xkN0"
+        }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": [
-      "expo-router"
-    ]
+    "plugins": ["expo-router"],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "bfb7e4c4-7b67-4ec3-9a35-d16224b0a2e4"
+      }
+    }
   }
 }

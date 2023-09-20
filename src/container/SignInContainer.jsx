@@ -3,13 +3,15 @@ import React from "react";
 import Circle from "../components/common/Circle";
 import Button from "../components/common/Button";
 import Logo from "../components/Logo";
-
+import { useRouter } from "expo-router";
+import CircleWrapper from "../components/CircleWrapper";
+import KeyboardSpacer from "react-native-keyboard-spacer";
 const SignInContainer = () => {
+  const router = useRouter();
   return (
     <View className="bg-[#EDF4F3] h-full">
       <View className="z-10  h-36">
-        <Circle translateX={-20} translateY={-120} />
-        <Circle translateX={-100} translateY={-240} />
+        <CircleWrapper />
       </View>
       <View className="w-full h-fit gap-y-6  flex items-center justify-center">
         <View className="flex flex-col items-center justify-center">
@@ -31,17 +33,15 @@ const SignInContainer = () => {
         </View>
 
         <View className="w-full h-fit gap-y-4 flex items-center justify-center">
-          <Button>Login</Button>
-          <View className = "flex flex-row">
-            <Text>
-                Don't have an Account ? 
-            </Text>
-            <Pressable>
-                <Text className = "font-semibold text-green-700">
-                    sigin up
-                </Text>
+          <Button handleSubmit={() => router.push("/(home)")}>Login</Button>
+          <View className="flex flex-row">
+            <Text>Don't have an Account ?</Text>
+            <Pressable onPress={() => router.push("/signup")}>
+              <Text className="font-semibold text-green-700">sign up</Text>
             </Pressable>
-        </View>
+          </View>
+        <KeyboardSpacer topSpacing={60}  />
+
         </View>
       </View>
     </View>
