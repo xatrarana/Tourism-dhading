@@ -18,7 +18,7 @@ const HomeGridComponent = () => {
     <>
     <View className = "flex flex-row gap-x-4 items-center justify-center">
       {data.map((item) => (
-        <View key={item.color} style = {{backgroundColor:item.color, padding:6, paddingHorizontal:32, borderRadius:8}}>
+        <View key={item.color} style = {{backgroundColor:item.color, paddingVertical:10, paddingHorizontal:32, borderRadius:8}}>
             <Text className = "text-white">{item.name}</Text>
         </View>
       ))}

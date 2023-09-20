@@ -1,4 +1,4 @@
-import { Tabs } from "expo-router";
+import { Tabs, useRouter, usePathname } from "expo-router";
 import {
   Ionicons,
   FontAwesome,
@@ -8,14 +8,20 @@ import {
 } from "@expo/vector-icons";
 
 import Colors from "../../src/constants/theme";
+import ShortHeader from "../../src/components/common/ShortHeader";
 export default () => {
+    const router = usePathname();
+
   return (
     <Tabs
       screenOptions={{
         tabBarInactiveTintColor: "black",
+        header: ShortHeader,
         tabBarStyle: {
           height: 70,
           paddingVertical: 10,
+          display: usePathname() === '/location' ? 'none' : 'flex',
+          
           
         },
         tabBarLabelStyle: {
@@ -58,6 +64,7 @@ export default () => {
           ),
         }}
       />
+      
       <Tabs.Screen
         name="wishlist"
         options={{
