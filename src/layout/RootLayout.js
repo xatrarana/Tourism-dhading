@@ -1,45 +1,52 @@
 import React from "react";
 import { Stack } from "expo-router";
+import DataProvider from "../context/DataProvider";
 // import { RootSiblingParent } from "react-native-root-siblings";
 const RootLayout = () => {
   return (
     <>
-              <Stack>
-                <Stack.Screen
-                  name="index"
+      <DataProvider>
+        <Stack>
+          <Stack.Screen
+            name="index"
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="(onboard)/onboard"
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="(auth)/signin"
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="(auth)/signup"
+            options={{
+              headerShown: false,
+            }}
+          />
+       
+          <Stack.Screen
+            name="(home)"
+            options={{
+              headerShown: false,
+            }}
+          />
+             <Stack.Screen
+                  name="(places)/details"
                   options={{
-                    headerShown: false,
+                    headerShown: true,
+                    headerTitle: "Places",
                   }}
                 />
-                <Stack.Screen
-                  name="(auth)/signin"
-                  options={{
-                    headerShown: false,
-                  }}
-                />
-                <Stack.Screen
-                  name="(auth)/signup"
-                  options={{
-                    headerShown: false,
-                  }}
-                />
-                  <Stack.Screen
-                  name="(auth)/onboard"
-                  options={{
-                    headerShown: false,
-                  }}
-                />
-                   <Stack.Screen
-                  name="(home)"
-                  options={{
-                    headerShown: false,
-                  }}
-                />
-                
 
-            
-            
-                {/* <Stack.Screen
+          {/* <Stack.Screen
                   name="(auth)/phone"
                   options={{
                     headerShown: false,
@@ -135,7 +142,8 @@ const RootLayout = () => {
                     headerTitle: "Nearby Places",
                   }}
                 /> */}
-              </Stack>
+        </Stack>
+      </DataProvider>
     </>
   );
 };

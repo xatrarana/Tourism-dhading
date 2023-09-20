@@ -5,13 +5,14 @@ import {
   useColorScheme,
   Image,
   SafeAreaView,
+  ScrollView,
   Pressable,
   Alert,
   TouchableOpacity,
 } from "react-native";
 
 import React from "react";
-import HomeGridComponent from "../../components/HomeGridComponent";
+import HomeComponent from "../../components/HomeComponent";
 import CircleWrapper from "../../components/CircleWrapper";
 import Menu from "../../components/nav/Menu";
 import { StatusBar } from "expo-status-bar";
@@ -23,7 +24,8 @@ const HomeContainer = () => {
   const colorScheme = useColorScheme();
   const router = useRouter();
   return (
-    <SafeAreaView className="h-full w-full">
+    <SafeAreaView style= {{flex:1}}> 
+    <ScrollView className="h-full w-full mb-[54px]">
       <StatusBar
         style={colorScheme === "dark" ? "light-content" : "dark-content"}
       />
@@ -54,9 +56,11 @@ const HomeContainer = () => {
           </View>
         </View>
       </View>
+          
+      <HomeComponent />
+    </ScrollView>
+    <Menu />
 
-      <HomeGridComponent />
-      <Menu />
     </SafeAreaView>
   );
 };

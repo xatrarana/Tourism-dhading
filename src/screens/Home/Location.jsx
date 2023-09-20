@@ -1,13 +1,13 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import LocationContainer from '../../container/Home/Location/LocationContainer'
+import { View, Text } from "react-native";
+import React from "react";
+import LocationContainer from "../../container/Location/LocationContainer";
 
 const Location = () => {
   return (
     <>
-    <LocationContainer/>
+      <LocationContainer />
     </>
-  )
-}
+  );
+};
 
-export default Location
+export default Location;

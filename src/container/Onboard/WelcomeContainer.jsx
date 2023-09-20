@@ -1,10 +1,10 @@
 import { View, Text, Alert } from "react-native";
 import React from "react";
-import Circle from "../components/common/Circle";
-import Button from "../components/common/Button";
-import Logo from "../components/Logo";
+import Circle from "../../components/common/Circle";
+import Button from "../../components/common/Button";
+import Logo from "../../components/Logo";
 import { useRouter } from "expo-router";
-import CircleWrapper from "../components/CircleWrapper";
+import CircleWrapper from "../../components/CircleWrapper";
 
 const WelcomeContainer = () => {
   const router = useRouter();
