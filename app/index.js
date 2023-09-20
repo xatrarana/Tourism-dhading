@@ -5,7 +5,7 @@ import { Redirect } from 'expo-router'
 const index = () => {
   return (
     <>
-      <Redirect href ="/onboard" />
+      <Redirect href ="(tabs)" />
       
 
     </>

@@ -33,7 +33,7 @@ const SignInContainer = () => {
         </View>
 
         <View className="w-full h-fit gap-y-4 flex items-center justify-center">
-          <Button handleSubmit={() => router.push("/(home)")}>Login</Button>
+          <Button handleSubmit={() => router.push("/(tabs)")}>Login</Button>
           <View className="flex flex-row">
             <Text>Don't have an Account ?</Text>
             <Pressable onPress={() => router.push("/signup")}>
