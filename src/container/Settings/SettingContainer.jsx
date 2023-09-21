@@ -1,6 +1,7 @@
-import { View, Text, Image, FlatList } from "react-native";
+import { View, Text, Image, FlatList,TouchableOpacity } from "react-native";
 import React from "react";
 import { FontAwesome5 } from '@expo/vector-icons'; 
+import { useRouter } from "expo-router";
 
 
 const data = [
@@ -12,7 +13,17 @@ const data = [
   "Log Out",
 ];
 
+
+
 const SettingContainer = () => {
+  const router = useRouter();
+  const handleClick = (item) => {
+    if (item === "Log Out") {
+      router.replace("/signin");
+    }else{
+      console.log(item);
+    }
+  }
   return (
     <View>
       <View>
@@ -34,13 +45,13 @@ const SettingContainer = () => {
             data={data}
             keyExtractor={(item) => item}
             renderItem={({ item }) => (
-              <View className = "p-5 font-bold  bg-white my-2 mx-4 flex flex-row justify-between rounded-2xl ">
+              <TouchableOpacity onPress= {()=> handleClick(item)} className = "p-5 font-bold  bg-white my-2 mx-4 flex flex-row justify-between rounded-2xl ">
                 
                 <Text>{item}</Text>
                 <View>
                 <FontAwesome5 name="angle-right" size={24} color="black" />
                 </View>
-              </View>
+              </TouchableOpacity>
             )}
           />
         </View>

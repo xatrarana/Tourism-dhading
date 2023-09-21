@@ -7,9 +7,9 @@ import { useRouter } from "expo-router";
 const sections = ["Popular", "Religious", "Natural"];
 
 const data = [
-  { name: "Gallery", color: Colors.primary },
-  { name: "Near By", color: Colors.secondary },
-  { name: "Sights", color: Colors.Tertiary },
+  { name: "Gallery", color: Colors.primary, route:"/gallery" },
+  { name: "Near By", color: Colors.secondary, route:"/nearby" },
+  { name: "Sights", color: Colors.Tertiary , route:"/sights"},
 ];
 
 const HomeGridComponent = () => {
@@ -20,9 +20,9 @@ const HomeGridComponent = () => {
     <>
     <View className = "flex flex-row gap-x-4 items-center justify-center">
       {data.map((item) => (
-        <View key={item.color} style = {{backgroundColor:item.color, paddingVertical:10, paddingHorizontal:32, borderRadius:8}}>
+        <TouchableOpacity onPress={()=>router.push(item.route)} key={item.color} style = {{backgroundColor:item.color, paddingVertical:10, paddingHorizontal:32, borderRadius:8}}>
             <Text className = "text-white">{item.name}</Text>
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
     <View className = "flex flex-row items-center justify-between  mx-4 mt-8">

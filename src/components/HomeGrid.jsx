@@ -120,7 +120,6 @@ const HomeGrid = () => {
     });
   };
 
-  console.log(filteredData[0]);
   return (
     <ScrollView
       contentContainerStyle={{
