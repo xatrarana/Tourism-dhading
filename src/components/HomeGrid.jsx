@@ -103,7 +103,24 @@ const HomeGrid = () => {
 
   const filteredData = data.slice(0, 4);
 
-  console.log(filteredData);
+  const handleClick = (item) => {
+    // router.push("/details", { item });
+    router.push({
+      pathname: "/details",
+      params: {
+        title: item.alt_description,
+        // placeId: _id,
+        // description: item.description,
+        // totalRating: totalRating,
+        // coordinates: coordinates.coordinates,
+        // wardno: wardno,
+        // location: location,
+        url: item.urls.regular,
+      },
+    });
+  };
+
+  console.log(filteredData[0]);
   return (
     <ScrollView
       contentContainerStyle={{
@@ -117,14 +134,14 @@ const HomeGrid = () => {
     >
       {filteredData.map((item) => (
         <Pressable
-          onPress={() => router.push("/details")}
+          onPress={()=>handleClick(item)}
           key={item.id}
           className="w-40  h-56 bg-slate-300 rounded-xl "
-          style= {{width:width/2.2}}
+          style={{ width: width / 2.2 }}
         >
           <Image
             className="rounded-xl"
-            source={{ uri: item.url }}
+            source={{ uri: item.urls.regular }}
             style={{ width: "100%", height: "100%" }}
           />
           <View className="absolute bottom-2 left-1">

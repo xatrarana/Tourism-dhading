@@ -1,6 +1,6 @@
 import { View, Text,StyleSheet } from "react-native";
 import React from "react";
-import { Feather } from "@expo/vector-icons";
+import { Feather,FontAwesome,AntDesign } from "@expo/vector-icons";
 
 
 const PlaceDetailStarRating = () => {
@@ -25,7 +25,7 @@ const PlaceDetailComponent = () => {
         </View>
         {/* Section 2 */}
         <View style= {styles.container}>
-          <Feather name="map" size={24} color="black" />
+        <FontAwesome name="star" size={24} color="#FF5733" />
           <View>
             <Text>Rating</Text>
             <Text>Rate The Place</Text>
@@ -33,7 +33,7 @@ const PlaceDetailComponent = () => {
         </View>
         {/* Section 3 */}
         <View style= {styles.container}>
-          <Feather name="map" size={24} color="black" />
+        <AntDesign name="playcircleo" size={24} color="black" />
           <View>
             <Text>Audio</Text>
             <Text>Play</Text>

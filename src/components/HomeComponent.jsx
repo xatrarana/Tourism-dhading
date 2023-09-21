@@ -3,6 +3,7 @@ import { View, FlatList, Text, TouchableOpacity } from "react-native";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import Colors from "../constants/theme";
 import HomeGrid from "./HomeGrid";
+import { useRouter } from "expo-router";
 const sections = ["Popular", "Religious", "Natural"];
 
 const data = [
@@ -13,6 +14,7 @@ const data = [
 
 const HomeGridComponent = () => {
   const [currentSection, setCurrentSection] = useState(sections[0]);
+  const router = useRouter();
 
   return (
     <>
@@ -25,7 +27,7 @@ const HomeGridComponent = () => {
     </View>
     <View className = "flex flex-row items-center justify-between  mx-4 mt-8">
       <Text className = "font-semibold text-xl">Popular Destination</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>router.push("/placeslist")}>
         <Text className = "font-semibold">
           See More
         </Text>

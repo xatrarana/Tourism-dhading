@@ -46,13 +46,20 @@ const RootLayout = () => {
               headerTitle: "Settings",
             }}
           />
-          {/* <Stack.Screen
+          <Stack.Screen
             name="(places)/details"
             options={{
               headerShown: true,
               headerTitle: "Places",
             }}
-          /> */}
+          />
+          <Stack.Screen
+            name="(places)/placeslist"
+            options={{
+              headerShown: true,
+              headerTitle: "Places List",
+            }}
+          />
         </Stack>
       </DataProvider>
     </>
