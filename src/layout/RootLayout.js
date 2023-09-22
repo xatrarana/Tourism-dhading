@@ -1,10 +1,15 @@
 import React from "react";
 import { Stack } from "expo-router";
 import DataProvider from "../context/DataProvider";
-// import { RootSiblingParent } from "react-native-root-siblings";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
+const queryClient = new QueryClient();
 const RootLayout = () => {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <DataProvider>
         <Stack>
           <Stack.Screen
@@ -83,7 +88,7 @@ const RootLayout = () => {
           />
         </Stack>
       </DataProvider>
-    </>
+    </QueryClientProvider>
   );
 };
 

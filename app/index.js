@@ -7,7 +7,6 @@ const index = () => {
     <>
       <Redirect href ="/onboard" />
       
-
     </>
   )
 }
